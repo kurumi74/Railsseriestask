@@ -1,2 +1,12 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>ツイート一覧</h1>
+<table>
+  <tr>
+    <th>内容</th>
+  </tr>
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.content %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'ツイートする', new_task_path %>
