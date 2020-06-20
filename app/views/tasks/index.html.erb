@@ -1,16 +1,25 @@
-<h1>ツイート一覧</h1>
+<header>
+  <img src="/assets/bird.png" alt="taskロゴ" width="50" height="50">
+</header>
+
+<body>
+<h1>タイムライン</h1>
 <p><%= notice %></p>
+<%= link_to 'ツイートする', new_task_path %>
 <table>
-  <tr>
-    <th>内容</th>
-  </tr>
 <% @tasks.each do |task| %>
   <tr>
-    <td><%= task.content %></td>
-    <td><%= link_to '詳細を確認する', task_path(task.id) %></td>
-    <td><%= link_to "ツイートを編集する", edit_task_path(task.id) %></td>
-    <td><%= link_to 'ツイートを削除する', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-    </tr>
+    <td colspan="3"><%= task.content %></td>
+  </tr>
+  <tr>
+    <td><%= link_to '確認', task_path(task.id) %></td>
+    <td><%= link_to "編集", edit_task_path(task.id) %></td>
+    <td><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+  </tr>
 <% end %>
 </table>
-<%= link_to 'ツイートする', new_task_path %>
+</body>
+
+<footer>
+  <p>Powered by kurumi Watanabe</p>
+</footer>
