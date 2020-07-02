@@ -1,25 +1,39 @@
-<header>
-  <img src="/assets/bird.png" alt="taskロゴ" width="50" height="50">
-</header>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Roboto&display=swap" rel="stylesheet">
+  <title>task</title>
+</head>
 
 <body>
-<h1>タイムライン</h1>
-<p><%= notice %></p>
-<%= link_to 'ツイートする', new_task_path %>
-<table>
-<% @tasks.each do |task| %>
-  <tr>
-    <td colspan="3"><%= task.content %></td>
-  </tr>
-  <tr>
-    <td><%= link_to '確認', task_path(task.id) %></td>
-    <td><%= link_to "編集", edit_task_path(task.id) %></td>
-    <td><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
-</body>
+<div id="wrapper2">
 
-<footer>
+<header class="indexheader">
+  <p>Rails Series Kadai</p> 
+</header>
+
+<div class="indexbody">
+  <div class="indeximg">
+    <img src="/assets/bird.png" alt="taskロゴ" width="70" height="70">
+    <p><%= notice %></p>
+    <%= link_to 'ツイートする', new_task_path %>
+    <br>
+  </div>
+  <table>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td colspan="3"><%= task.content %></td>
+      </tr>
+      <tr>
+        <td><%= link_to '確認', task_path(task.id) %></td>
+        <td><%= link_to "編集", edit_task_path(task.id) %></td>
+        <td><%= link_to '削除', task_path(task.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<footer class="indexfooter">
   <p>Powered by kurumi Watanabe</p>
 </footer>
+
+</div>
+</body>
